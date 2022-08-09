@@ -1,0 +1,17 @@
+SQL> select * form sosi
+  2  ;
+select * form sosi
+         *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> select * form sosi;
+select * form sosi
+         *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> exit
+ 
