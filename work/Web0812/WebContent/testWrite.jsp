@@ -12,15 +12,26 @@
 	#top { margin-top:30px;}
 	body { margin:10px;}
 </style>
+<script type="text/javascript">
+	function nullCheck(){
+		
+	}//end
+	function codeCheck(){
+		
+	}//end
+</script>
 </head>
 <body>
 <h2>testWrite.jsp</h2>
 	<p id="top"></p>
 	<form name="myform" method="get" action="testWriteSave.jsp">
+	코드: <input type="text" name="code" id="code">
+	<input type="button" value="code중복체크"><br>
 	제목: <input type="text" name="title" id="title"><br>
 	급여: <input type="text" name="pay" id="pay"><br>
-	코드: <input type="text" name="code" id="code"><br>
-		 <input type="submit" value="데이터저장">&nbsp;
+	
+
+		 <input type="button" value="버튼데이터저장">&nbsp;
 		 <input type="reset" value="입력취소">
 	</form>
 	<p>
