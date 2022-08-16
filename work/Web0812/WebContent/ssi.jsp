@@ -10,9 +10,9 @@
 <meta charset="UTF-8">
 <title> </title>
  <style type="text/css">
-    * { font-size:16pt;  }
-    a { font-size:16pt; text-decoration:none ;font-weight:bold; }
-    a:hover{ font-size:20pt; text-decoration:underline ;}
+    * { font-size:12pt;  }
+    a { font-size:12pt; text-decoration:none ;font-weight:bold; }
+    a:hover{ font-size:14pt; text-decoration:underline ;}
     body{margin-left:10px;}
  </style>
 </head>
