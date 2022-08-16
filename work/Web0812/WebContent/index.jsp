@@ -5,9 +5,9 @@
 <meta charset="UTF-8">
 <title> [index.jsp]</title>
  <style type="text/css">
-    * { font-size:20pt;  }
-    a { font-size:20pt; text-decoration:none ;font-weight:bold; }
-    a:hover{ font-size:24pt; text-decoration:underline ; color:blue ;}
+    * { font-size:16pt;  }
+    a { font-size:16pt; text-decoration:none ;font-weight:bold; }
+    a:hover{ font-size:20pt; text-decoration:underline ;}
     body{margin-left:10px;}
  </style>
  
