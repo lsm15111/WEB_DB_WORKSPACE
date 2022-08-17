@@ -1,0 +1,158 @@
+
+08-16-화요일
+WebContent => 오.버 => JSP File
+ ㄴimages폴더
+ ㄴMETA-INF
+ ㄴWEB-INF
+   ㄴlib노란색폴더
+     ㄴojdbc6.jar꼭 있어야 함
+ ㄴboardWrite.jsp => 게시판입력화면
+ ㄴboardWriteSave.jsp => 게시판저장화면
+ ㄴboardList.jsp => 게시판전체출력화면
+
+    drop sequence  board_seq;
+    create sequence  board_seq;
+    drop table board ;
+    create table board ( 
+        idx  시퀀스
+        code pk
+        name
+        title,wdate,content,email,hit,picture
+    );
+ ㄴtestWrite.jsp 
+ ㄴopenID.jsp문서
+(08-16-화요일)김영임testWrite.zip
+
+
+ ㄴindex.jsp => js화면이동, <video태그>
+ ㄴtestWrite.jsp 
+    ㄴ<form action="guestWriteSave.jsp"> <input type=submit value="저장"> </form>
+
+ ㄴtestWriteSave.jsp => db서버연결 , 전역변수 , insert into test ~~~
+ ㄴtestList.jsp => db서버연결 , 전역변수 , select order by 
+   ㄴFile메뉴 Save As...  ssi.jsp저장
+ ㄴtestDetail.jsp => db서버연결 , 전역변수 , select where조건 
+
+
+
+
+
+ ㄴtest테이블 저장, 전체출력, 한건출력, 레코드갯수
+ ㄴ자바기초 - 변수,연산,제어,반복,배열
+ ㄴ자바스크립트 숙제-숫자체크
+ ㄴ(8-11-목요일)김영임sosi프로시저,부하직원~~.zip숙제 
+              다시 체크 하겠습니다
+
+testWrite.jsp문서는 화면입력화면
+testWriteSave.jsp문서는 insert into ~ 저장처리문서
+testList.jsp문서 =>File메뉴 Save as...
+ ㄴtestDetail.jsp문서는 select ~ where ~ 한건출력문서
+
+SQL> insert into test values( 'sunday', 71, sysdate, 2234 );
+SQL> commit ;
+SQL> select * from  test ;
+
+첫번째 test테이블생성
+두번째 WEB-INF\lib폴더\ojdbc6.jar파일복붙
+세번째 testWrite.jsp문서먼저 실행
+4번째 testWriteSave.jsp문서  
+  msg="insert into test values('"+Gtitle+"',"+Gpay+",sysdate,"+Gcode+")" ; 
+
+
+--index.jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> [ index.jsp ] </title> 
+	<script type="text/javascript">
+		setTimeout("location.href='guestList.jsp'" , 2000); 
+	</script>
+
+	<style type="text/css">
+	 #pline{ margin-top: 70px; }
+	</style>
+</head> 
+<body>
+   <!-- index.jsp주석  -->
+   <p id="pline">	
+   <div align="center">
+      <br>
+       <video width="600" autoplay muted loop controls="controls">
+           <source  src="images/scuba.mp4"  type="video/mp4"></source>
+      </video>
+      <p></p>
+    </div>
+	
+</body>
+</html>
+
+
+
+--ssi.jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8"   pageEncoding="UTF-8" %>         
+
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.sql.PreparedStatement" %>
+<%@ page import="java.sql.CallableStatement" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.util.Date" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>  </title>
+  <style type="text/css">
+	*{ font-size: 26pt; }
+	a{ font-size: 26pt; color:green; text-decoration:none; }
+	a:hover{ font-size:30pt; color:blue; text-decoration:underline; }
+  </style>
+	
+  <script type="text/javascript">
+  </script>
+</head>
+<body>
+  <%!
+    //ssi.jsp문서 
+    Connection CN ;
+    Statement ST ;
+    PreparedStatement PST;
+    CallableStatement CST;
+    ResultSet RS ;
+    
+    int Gsabun,Gpay, Ghit ;
+    int GGtotal; //전체레코드갯수
+    int Gtotal ; //조회레코드갯수
+    int GStotal=0 ; //Gtotal대신 GStotal사용도 좋습니다조회갯수
+    
+    String Gname,Gtitle, Gemail ;
+    java.util.Date Gwdate;
+    
+    String msg;
+    String submsg;
+    String Gdata;
+    int Rcnt ; //댓글갯수 카운트
+    
+    //댓글관련 전역변수
+    String Rdata ; //guest_reply.jsp문서에서 사용
+    int Rrn, Rnum, Rsabun ;
+    String Rwriter, Rcontent;
+  %>
+
+ <%
+   try{
+  	Class.forName("oracle.jdbc.driver.OracleDriver");
+    String url="jdbc:oracle:thin:@127.0.0.1:1521:XE" ;
+    CN=DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:XE","system","1234");
+    System.out.println("ssi.jsp문서 오라클연결성공success"); 
+   }catch(Exception ex){ System.out.println(ex); }
+ %>
+
+</body>
+</html>
+
+
