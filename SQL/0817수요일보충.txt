@@ -13,6 +13,7 @@ drop table login ;
 
  
 
+
  --bbs시리즈는 꼭 복사붙여넣기하세요
  drop   sequence  bbs_seq ;  
  create sequence bbs_seq ;
