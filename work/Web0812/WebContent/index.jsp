@@ -5,15 +5,15 @@
 <meta charset="UTF-8">
 <title> [index.jsp]</title>
  <style type="text/css">
-    * { font-size:16pt;  }
-    a { font-size:16pt; text-decoration:none ;font-weight:bold; }
-    a:hover{ font-size:20pt; text-decoration:underline ;}
+    * { font-size:20pt;  }
+    a { font-size:20pt; text-decoration:none ;font-weight:bold; }
+    a:hover{ font-size:24pt; text-decoration:underline ; color:blue ;}
     body{margin-left:10px;}
  </style>
  
  <script type="text/javascript">
     //웹브라우저에서 제공되는 객체 DOM돔 window,document,location문서이동,history,image,screen
-    setTimeout("location.href='testWrite.jsp'" , 3000) ;
+    setTimeout("location.href='testList.jsp'" , 3000) ;
  </script>
 </head> 
 <body>
@@ -37,7 +37,15 @@
     <a href="testWrite.jsp">[게시판입력화면]</a>
     <a href="testList.jsp">[게시판전체출력]</a>
     <a href="index.jsp">[index]</a>
+    <a href="login.jsp">[로그인]</a>
   </div>
  
 </body>
 </html>
+
+
+
+
+
+
+

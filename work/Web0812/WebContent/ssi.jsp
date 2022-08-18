@@ -10,9 +10,9 @@
 <meta charset="UTF-8">
 <title> </title>
  <style type="text/css">
-    * { font-size:12pt;  }
-    a { font-size:12pt; text-decoration:none ;font-weight:bold; }
-    a:hover{ font-size:14pt; text-decoration:underline ;}
+    * { font-size:20pt;  }
+    a { font-size:20pt; text-decoration:none;}
+    a:hover{ font-size:24pt; text-decoration:underline ; color:blue ;}
     body{margin-left:10px;}
  </style>
 </head>
@@ -28,7 +28,7 @@
   String  Gname, Gtitle, Gconent, Gwriter, Gemail; //문자열타입
   java.util.Date  Gwdate, hiredate, Gbirth ; //날짜타입
   boolean Ggender, Gflag ;
-  int Gtotal=0, total=0, Stotal=0 ; 
+  int Gtotal=7, total=7, Stotal=0 ; 
   String Gdata, data, Gmsg, msg ;
 %>
 
@@ -37,10 +37,16 @@
   Class.forName("oracle.jdbc.driver.OracleDriver");
   String url="jdbc:oracle:thin:@127.0.0.1:1521:XE";
   CN=DriverManager.getConnection(url, "system", "1234");
-  System.out.println("오라클 db서버 연결 성공 08-16-화요일") ;
+  //System.out.println("오라클 db서버 연결 성공 08-16-화요일") ;
  }catch(Exception ex){ System.out.println("db에러 " + ex); }
 %>
 
 </body>
 </html>
+
+
+
+
+
+
 
