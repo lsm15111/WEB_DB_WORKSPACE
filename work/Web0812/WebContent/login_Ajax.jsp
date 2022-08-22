@@ -17,7 +17,7 @@
 	  var xhr; //전역변수 
 	        
 	  function first( ){
-		return new XMLHttpRequest( );
+		return new XMLHttpRequest();
 	  }//end
 	  
 	  function two(){  
@@ -30,14 +30,13 @@
 		xhr.open("GET", url, true);
 		xhr.send();
 	 }//end
-	 function aws(){
+	 function aws( ){
 		 if(xhr.readyState=4){
 			 if(xhr.status==200){
-				 let message = xhr.responseText;
+				 var message = xhr.responseText;
 				 document.getElementById("my").innerHTML= message ;
 			 }
 		 }
-		 
 	 }
 	  
 	</script>
@@ -54,7 +53,7 @@
 			<td> <input type="text" name="userid" id="userid"  value="sky"></td>
 			
 			<td rowspan=2 align="center">
-			 <input type="button" onclick="two()" value="LOG-IN" id="LOG-IN" >
+			 <input type="button" onclick="two( )" value="LOG-IN" id="LOG-IN" >
 			</td>
 		</tr>
 		
