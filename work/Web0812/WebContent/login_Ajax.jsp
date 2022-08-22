@@ -17,7 +17,7 @@
 	  var xhr; //전역변수 
 	        
 	  function first( ){
-		return new XMLHttpRequest();
+		return new XMLHttpRequest( );
 	  }//end
 	  
 	  function two(){  
@@ -31,7 +31,7 @@
 		xhr.send();
 	 }//end
 	 function aws( ){
-		 if(xhr.readyState=4){
+		 if(xhr.readyState==4){
 			 if(xhr.status==200){
 				 var message = xhr.responseText;
 				 document.getElementById("my").innerHTML= message ;
@@ -44,7 +44,7 @@
 <body>
 	
 
-<div id="msg" align="center">	
+<div id="my" align="center">	
 	<h1> login_Ajax.jsp </h1>	
 	<table width="550" border="1" cellspacing="0">
 	  <form name="myform">
