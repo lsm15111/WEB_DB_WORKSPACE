@@ -1,0 +1,53 @@
+﻿1.XMLHttpRequest 
+	var  xhr; //전역변수
+
+	if(window.ActiveXObject)
+	   xhr = new ActiveXObject("Microsoft.XMLHTTP");
+	else if(window.XMLHttpRequest)
+	   xhr = new XMLHttpRequest(); //js에서 객체생성
+
+2.CallBack  
+	xhr.onreadystatechange = display ; //권장방법
+	xhr.onreadystatechange=function( ){ display내용 여기에 기술 }
+
+3.작업요청(GET/POST)
+	  //var a=document.getElementById("title").value;
+ 	  var b=document.myform.title.value;
+ 	  //var url="hello.jsp?title="+encodeURIComponent(b);  
+ 	  var url="hello.jsp?title="+b;
+ 
+	-open("GET/POST", documen , "TRUE")
+
+	-GET
+		xhr.open("GET", url , true);
+		xhr.send(null);
+	-POST
+		xhr.open("POST", "hello.jsp" , true);
+		xhr.send("no=3");
+    
+4.display( )
+	var code = xhr.readyState;
+		0 : uninitialize
+		1 : loading
+		2 : loaded
+		3 : interactive
+		4 : complete
+	var status = xhr.status;
+		200 : complete
+		404 : Not Found
+		500 : Syntax Error
+		
+5.데이타수신
+ function display( ) {
+      if(xhr.readyState==4 && xhr.status==200) {
+	//Text Data
+   	     var data = xhr.responseText;
+    	//JSON
+           var json = eval(xhr.responseText);
+	//Xml Data
+	  var data = xhr.responseXml;
+      }
+ }//end
+   
+   
+   
