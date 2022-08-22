@@ -22,7 +22,7 @@
      <b><%= usera %>님 로그인 성공!!!</b> <br>
    </font><p>
 	<img src="images/bt_login.gif" width=450 height=70><p>
-	<img src="images/error1.gif" width=450 >
+	<img src="images/login2.gif" width=450 >
 <%  
   }else{
     out.println("<font size=7 color=red><b></b>"+usera+"님 로그인실패</font><p>");
@@ -30,7 +30,6 @@
     out.println("<font size=7><a href='index.jsp'>[index]</a></font>");	
   }
 %>
-	
 </body>
 </html>
 
