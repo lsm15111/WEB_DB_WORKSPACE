@@ -2,7 +2,7 @@
 
 <html>
 <head>
-<title>[login_Ajax.jsp]</title>
+<title>[login_AjaxCOPY.jsp]</title>
 	<style type="text/css">
 		input, b{font-size: 20pt; font-weight: bold;}
 		a{text-decoration: none;font-size: 20pt; font-weight: bold;}
@@ -34,7 +34,7 @@
 		 if(xhr.readyState==4){
 			if(xhr.status==200){
 			 var message=xhr.responseText;
-			 document.getElementById("msg").innerHTML=message;
+			 document.getElementById("my").innerHTML=message;
 			}//200 end
 		 }//4 end
 	  }//end
@@ -43,8 +43,8 @@
 <body>
 	
 
-<div id="msg" align="center">	
-	<h1> login_Ajax.jsp </h1>	
+<div id="my" align="center">	
+	<h1> login_AjaxCOPY.jsp 08-22-월요일 </h1>	
 	<table width="550" border="1" cellspacing="0">
 	  <form name="myform">
 		<tr>
@@ -64,6 +64,8 @@
 		</tr>
 		</form>
 	</table>
+</div>	
+<div id="msg" align="center">
 </div>
 
 </body>

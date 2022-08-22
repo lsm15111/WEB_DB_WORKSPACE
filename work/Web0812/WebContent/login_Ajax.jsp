@@ -17,7 +17,7 @@
 	  var xhr; //전역변수 
 	        
 	  function first( ){
-		return new XMLHttpRequest( );
+		return new XMLHttpRequest();
 	  }//end
 	  
 	  function two(){  
@@ -25,27 +25,28 @@
 		var b=document.getElementById("pwd").value; 
 		//alert("userid="+a+" pwd="+b);
 		var url="login_List.jsp?UID="+a+"&UPWD="+b;
-		xhr=first();
+		//ajax처리할객체생성을 first함수에서 구현
+		xhr = first();
 		xhr.onreadystatechange=aws;
-		xhr.open("GET", url, true);
+		xhr.open("GET", url, true); //open(1방식,2받아서처리하는문서,3비동기처리)
 		xhr.send();
 	 }//end
-	 function aws( ){
-		 if(xhr.readyState==4){
-			 if(xhr.status==200){
-				 var message = xhr.responseText;
-				 document.getElementById("my").innerHTML= message ;
-			 }
-		 }
-	 }
 	  
+	  function aws( ){
+		if(xhr.readyState=4){
+		  if(xhr.status==200){
+			  var message = xhr.responseText;
+			  document.getElementById("my").innerHTML= message ;
+		  }
+		}
+	  }//end
 	</script>
 </head>
 <body>
 	
 
 <div id="my" align="center">	
-	<h1> login_Ajax.jsp </h1>	
+	<h1> login_Ajax.jsp 08-22-월요일 </h1>	
 	<table width="550" border="1" cellspacing="0">
 	  <form name="myform">
 		<tr>
@@ -65,6 +66,8 @@
 		</tr>
 		</form>
 	</table>
+</div>	
+<div id="msg" align="center">
 </div>
 
 </body>
