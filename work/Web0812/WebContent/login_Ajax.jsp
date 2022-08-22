@@ -23,21 +23,23 @@
 	  function two(){  
 		var a=document.getElementById("userid").value; 
 		var b=document.getElementById("pwd").value; 
+		//alert("userid="+a+" pwd="+b);
 		var url="login_List.jsp?UID="+a+"&UPWD="+b;
 		xhr=first();
-		xhr.onreadystatechange=display;
+		xhr.onreadystatechange=aws;
 		xhr.open("GET", url, true);
 		xhr.send();
 	 }//end
+	 function aws(){
+		 if(xhr.readyState=4){
+			 if(xhr.status==200){
+				 let message = xhr.responseText;
+				 document.getElementById("my").innerHTML= message ;
+			 }
+		 }
+		 
+	 }
 	  
-	  function display( ){
-		 if(xhr.readyState==4){
-			if(xhr.status==200){
-			 var message=xhr.responseText;
-			 document.getElementById("msg").innerHTML=message;
-			}//200 end
-		 }//4 end
-	  }//end
 	</script>
 </head>
 <body>
@@ -52,7 +54,7 @@
 			<td> <input type="text" name="userid" id="userid"  value="sky"></td>
 			
 			<td rowspan=2 align="center">
-			 <input type="button" onclick="two( )" value="LOG-IN" id="LOG-IN" >
+			 <input type="button" onclick="two()" value="LOG-IN" id="LOG-IN" >
 			</td>
 		</tr>
 		
