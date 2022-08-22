@@ -5,6 +5,10 @@ public class TestBean { //Bean=DTO=VO 필드/getter/setter==한강다리역할=�
   private int pay;
   private java.util.Date  wdate;
   private int code;
+  private int rn;
+  
+  public int getRn() {return rn;}
+  public void setRn(int rn) {this.rn = rn;}
   
   public String getTitle() {return title;}
   public void setTitle(String title) {this.title = title;	}
