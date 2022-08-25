@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title> [testWrite.jsp]</title>
+<title> [testWriteCOPY.jsp]</title>
  <style type="text/css">
     * { font-size:20pt;  }
     a { font-size:20pt; text-decoration:none ;font-weight:bold; }
@@ -75,14 +75,14 @@
  </script>
 </head>
 <body onLoad="firstFocus()">
-  <h2>testWrite.jsp</h2>
+  <h2>testWriteCOPY.jsp</h2>
   
-  <form name="myform" method="post"  action="nodeAdd">
+  <form name="myform" method="get"  action="testWriteSave.jsp">
     코드: <input type="text" name="code" id="code" size="6">
          <input type="button"  onClick="codeCheck();"  value="code중복체크"> <br>
     제목: <input type="text" name="title" id="title"> <br>
     급여: <input type="text"  onkeyup="payNumber();"  name="pay" id="pay" > <br>
-         <input type="submit" value="서브밋저장nodeAdd"> 
+         <input type="submit" value="서브밋저장"> 
          <input type="reset" value="입력취소"> 
   </form>
   
