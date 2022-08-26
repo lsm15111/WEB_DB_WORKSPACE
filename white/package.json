@@ -2,7 +2,7 @@
   "name": "white",
   "version": "1.0.0",
   "description": "my white",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "start": "nodemon app.js"
   },
