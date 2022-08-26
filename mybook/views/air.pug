@@ -17,6 +17,7 @@ head
   button.btn
     span.material-icons  search 
 ul.resultList
+  
 
 script.
   const resultList = $(".resultList");
@@ -31,7 +32,7 @@ script.
     resultList.html("");
 
     $.ajax({   //?serviceKey=8z5여러분꺼%3D&numOfRows=100&returnType=json&sidoName=${sidoVal}
-      url: `http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty?serviceKey=abbw3u6thdS63o9h010%2BEbwGjTTJ9HGh3VZa0%2BaExXBur%2FFRkIRLZL0O%2F31GVaJLgxYSGOnawqiPjValYdj9Vw3D%3D&numOfRows=100&returnType=json&sidoName=${sidoVal}`,
+      url: `http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty?servic여러분꺼umOfRows=100&returnType=json&sidoName=${sidoVal}`,
     }).done(function (data) {
       console.log(data.response.body.items);
       console.log("bbb입력한 도시 ", sidoVal);
@@ -39,8 +40,7 @@ script.
       let tempHtml = "";
       let pm10Emoji = "";
 
-
-
+      //https://www.science.co.il/internet/html/Smileys.php
       $.each(result, function (idx, item) {
         if (item.pm10Value <= 15) {
           pm10Emoji = "&#128515";
@@ -51,7 +51,8 @@ script.
         } else {
           pm10Emoji = "&#128561";
         }
-tempHtml += `
+
+        tempHtml += `
           <li>
             <h2>${item.stationName}</h2>
             <dl>
@@ -66,3 +67,4 @@ tempHtml += `
       resultList.append(tempHtml);
     });
   } //loadDust  end
+
